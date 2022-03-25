@@ -1,0 +1,22 @@
+using System;
+using System.Linq;
+
+namespace test
+{
+	class Sample2
+	{
+        static int GetDegrees(int hour)
+        {
+            hour %= 24;
+            hour = (hour > 12) ? 24 - hour : hour;
+
+            return hour * 30;
+        }
+
+        static void Main()
+        {
+            var hour = int.Parse(Console.ReadLine());
+            Console.WriteLine(GetDegrees(hour));
+        }
+    }
+}
