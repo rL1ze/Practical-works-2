@@ -1,0 +1,36 @@
+using System;
+using System.Windows.Input;
+
+namespace Високосные_года
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string exit;
+            do
+            {
+                int section = 0;
+                int start = Convert.ToInt32(Console.ReadLine());
+                int end = Convert.ToInt32(Console.ReadLine());
+
+                if (start % 4 == 0 && end % 4 == 0)
+                {
+                    section = (end - start) / 4;
+                    if(start % 10 == 2 || end % 10 == 2)
+                    {
+                        section++;
+                        Console.WriteLine(section);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Неправильно указан високосный год!");
+                }
+                Console.WriteLine();
+                Console.WriteLine("Выйти? Если да, то напшите '~'.");
+                exit = Convert.ToString(Console.ReadLine());
+            } while (exit != "~");
+        }
+    }
+}
